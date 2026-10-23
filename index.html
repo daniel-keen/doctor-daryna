@@ -1,0 +1,306 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Daryna Panfilova</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: left-aligned single column, 920px measure; hero pairs intro with a sterilization load label; timeline rows use a fixed date column. */
+:root {
+  --bg: #eef2f3;          /* steel-washed white */
+  --surface: #ffffff;
+  --ink: #12302f;         /* deep surgical teal */
+  --muted: #566d6c;
+  --line: #cfdadb;
+  --accent: #0f6b62;      /* sterile teal */
+  --tape: #d9cfb4;        /* indicator tape, unprocessed */
+  --tape-mark: #3b3a35;   /* indicator stripe after cycle */
+  --pass: #2f7d4f;
+  --display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1716; --surface: #13211f; --ink: #e3eeec; --muted: #94aaa7; --line: #26393a;
+    --accent: #5cc2b3; --tape: #4a4536; --tape-mark: #d9cfb4; --pass: #6cc28f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1716; --surface: #13211f; --ink: #e3eeec; --muted: #94aaa7; --line: #26393a;
+  --accent: #5cc2b3; --tape: #4a4536; --tape-mark: #d9cfb4; --pass: #6cc28f; color-scheme: dark;
+}
+
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 1.0625rem; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 920px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: clamp(2rem, 6vw, 4.5rem) 3rem;
+  display: grid; gap: clamp(3rem, 7vw, 5rem);
+}
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: var(--accent); }
+.label {
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* ---------- hero ---------- */
+.hero { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 3.5rem); align-items: end; }
+.hero h1 {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(3.2rem, 9vw, 5.6rem); line-height: 0.95; letter-spacing: -0.01em;
+  margin-top: 0.75rem;
+}
+.hero h1 em { color: var(--accent); }
+.hero .role { font-size: 1.2rem; font-weight: 500; margin-top: 1.1rem; }
+.hero .intro { color: var(--muted); max-width: 52ch; margin-top: 0.9rem; }
+
+.load-label {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 4px;
+  font-family: var(--mono); font-size: 0.8rem; overflow: hidden;
+  box-shadow: 0 1px 0 var(--line), 0 18px 40px -28px rgba(18, 48, 47, 0.45);
+}
+.tape {
+  height: 22px; background-color: var(--tape);
+  background-image: repeating-linear-gradient(-45deg, transparent 0 9px, var(--tape-mark) 9px 13px);
+  background-size: 0% 100%; background-repeat: no-repeat;
+  animation: develop 1.6s 0.4s ease-out forwards;
+}
+@keyframes develop { to { background-size: 100% 100%; } }
+@media (prefers-reduced-motion: reduce) { .tape { animation: none; background-size: 100% 100%; } }
+.load-label dl { margin: 0; padding: 0.9rem 1rem 1rem; display: grid; grid-template-columns: auto 1fr; gap: 0.45rem 1rem; }
+.load-label dt { color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; padding-top: 0.1rem; }
+.load-label dd { margin: 0; min-width: 0; }
+.status { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--pass); font-weight: 500; }
+.status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--pass); }
+
+/* ---------- sections ---------- */
+section { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 1.5rem; border-top: 1px solid var(--line); padding-top: 1.5rem; }
+section > .label { padding-top: 0.35rem; }
+section h2 { font-family: var(--display); font-weight: 400; font-size: clamp(1.9rem, 4vw, 2.4rem); line-height: 1.1; margin-bottom: 1.25rem; }
+.lead { max-width: 62ch; display: grid; gap: 1rem; }
+
+.points { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 2rem; }
+.points li { display: grid; gap: 0.2rem; }
+.points strong { font-weight: 600; }
+.points span { color: var(--muted); font-size: 0.97rem; }
+
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.6rem; }
+.timeline li { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 1.25rem; }
+.timeline time { font-family: var(--mono); font-size: 0.82rem; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 0.2rem; }
+.timeline h3 { font-size: 1.05rem; font-weight: 600; }
+.timeline .where { color: var(--accent); font-size: 0.95rem; }
+.timeline p { color: var(--muted); font-size: 0.97rem; margin-top: 0.35rem; max-width: 60ch; }
+.timeline .now time { color: var(--accent); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; margin: 0; padding: 0; }
+.tags li { font-family: var(--mono); font-size: 0.8rem; border: 1px solid var(--line); background: var(--surface); padding: 0.35rem 0.65rem; border-radius: 2px; }
+
+.contact { display: grid; gap: 0.75rem; }
+.contact-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; }
+.contact-row .value { font-size: 1.25rem; font-weight: 500; user-select: all; overflow-wrap: anywhere; }
+.copy {
+  font: 500 0.75rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent); background: transparent; border: 1px solid var(--accent);
+  padding: 0.35rem 0.7rem; border-radius: 2px; cursor: pointer;
+}
+.copy:hover { background: var(--accent); color: var(--bg); }
+.copy:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+footer { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 1.25rem; }
+
+@media (max-width: 720px) {
+  .hero { grid-template-columns: 1fr; }
+  section { grid-template-columns: 1fr; gap: 0.5rem; }
+  .points { grid-template-columns: 1fr; }
+  .timeline li { grid-template-columns: 1fr; gap: 0.2rem; }
+}
+</style>
+
+<main class="wrap">
+  <header class="hero">
+    <div>
+      <div class="label">Richmond Hill, Ontario</div>
+      <h1>Daryna<br><em>Panfilova</em></h1>
+      <p class="role">Medical Device Reprocessing Technician</p>
+      <p class="intro">Physician by training, now focused on the work that keeps every surgical instrument safe before it reaches a patient. Completing the MDRT program at Seneca Polytechnic.</p>
+    </div>
+    <aside class="load-label" aria-label="Profile summary styled as a sterilization load label">
+      <div class="tape" role="presentation"></div>
+      <dl>
+        <dt>Operator</dt><dd>D. Panfilova</dd>
+        <dt>Training</dt><dd>MDRT, Seneca Polytechnic</dd>
+        <dt>Clinical</dt><dd>10+ yrs, pediatrics</dd>
+        <dt>Standards</dt><dd>CSA Z314 · Forbes 5-star</dd>
+        <dt>Languages</dt><dd>EN · UK · RU</dd>
+        <dt>Status</dt><dd><span class="status">Open to MDRT roles</span></dd>
+      </dl>
+    </aside>
+  </header>
+
+  <section aria-labelledby="about-h">
+    <div class="label">About</div>
+    <div>
+      <h2 id="about-h">Clinical knowledge, applied behind the scenes</h2>
+      <div class="lead">
+        <p>I practised as a pediatrician in Kyiv for over ten years, including two years as head of a medical department with a team of 40. I know what instruments are for, how procedures run, and why a single missed defect matters.</p>
+        <p>In Canada I trained as an Osteopathic Manual Practitioner, ran my own practice, and have worked at The Ritz-Carlton, Toronto, since 2024, where every room and spa area is inspected against Forbes five-star standards. That habit of checking every detail against a written standard is what I bring to medical device reprocessing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="strengths-h">
+    <div class="label">Strengths</div>
+    <div>
+      <h2 id="strengths-h">What I bring to a reprocessing team</h2>
+      <ul class="points">
+        <li><strong>Reprocessing workflow</strong><span>Decontamination, inspection, assembly, packaging and sterilization, trained at Seneca.</span></li>
+        <li><strong>Infection prevention</strong><span>Led anti-epidemic measures at a clinic during COVID-19: separate patient flows, PPE, routine practices.</span></li>
+        <li><strong>Instrument knowledge</strong><span>Ten years of clinical work with medical instruments, devices and procedures.</span></li>
+        <li><strong>Quality inspection</strong><span>Systematic visual checks against written standards, every time, under time pressure.</span></li>
+        <li><strong>Training others</strong><span>Onboard new employees at The Ritz-Carlton; supervised nurses and medical assistants.</span></li>
+        <li><strong>Clear communication</strong><span>Works closely with supervisors, coworkers and the people the work serves.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="exp-h">
+    <div class="label">Experience</div>
+    <div>
+      <h2 id="exp-h">Where I've worked</h2>
+      <ol class="timeline" reversed>
+        <li class="now">
+          <time>2024 – now</time>
+          <div>
+            <h3>Turndown and Housekeeping Attendant</h3>
+            <div class="where">The Ritz-Carlton, Toronto</div>
+            <p>Turndown service, cross-trained as room, spa and laundry attendant. Inspections to Forbes five-star standards, two Forbes trainings, and onboarding of new employees.</p>
+          </div>
+        </li>
+        <li>
+          <time>2024 – 2025</time>
+          <div>
+            <h3>Osteopathic Manual Practitioner</h3>
+            <div class="where">Self-employed practice, Ontario</div>
+            <p>Client assessment and treatment plans, confidential records, and full cleaning and disinfection of the treatment space between every client.</p>
+          </div>
+        </li>
+        <li>
+          <time>2023 – 2024</time>
+          <div>
+            <h3>Pediatrician</h3>
+            <div class="where">Dobrobut Clinic, Kyiv</div>
+            <p>Examination, diagnosis and treatment planning for patients aged 0 to 18.</p>
+          </div>
+        </li>
+        <li>
+          <time>2021 – 2023</time>
+          <div>
+            <h3>Head of Medical Department, Pediatrician</h3>
+            <div class="where">Kinder Klinik, Kyiv</div>
+            <p>Led a 40-person interdisciplinary team: scheduling, budgets, performance reviews and quality control of patient care.</p>
+          </div>
+        </li>
+        <li>
+          <time>2014 – 2020</time>
+          <div>
+            <h3>Pediatrician</h3>
+            <div class="where">Ilaya Family Clinic and Ambulatory Clinic of Family Medicine, Kyiv</div>
+            <p>Patient care and records, supervision of nurses and medical assistants, and COVID-19 infection-control measures.</p>
+          </div>
+        </li>
+        <li>
+          <time>2012 – 2014</time>
+          <div>
+            <h3>Medical Internship</h3>
+            <div class="where">Children's Hospital No. 7, Kyiv</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section aria-labelledby="edu-h">
+    <div class="label">Education</div>
+    <div>
+      <h2 id="edu-h">Training and credentials</h2>
+      <ol class="timeline" reversed>
+        <li class="now">
+          <time>Oct 2026</time>
+          <div><h3>Medical Device Reprocessing Conference</h3><div class="where">St. John's, Newfoundland and Labrador</div></div>
+        </li>
+        <li class="now">
+          <time>2026 – now</time>
+          <div><h3>Medical Device Reprocessing Technician Program</h3><div class="where">Seneca Polytechnic, Toronto</div></div>
+        </li>
+        <li>
+          <time>2024 – 2025</time>
+          <div><h3>Diploma, Osteopathic Manual Practitioner</h3><div class="where">Canadian College of Holistic Health, Toronto</div></div>
+        </li>
+        <li>
+          <time>2024 – 2026</time>
+          <div><h3>Forbes Travel Guide Standards Training, 2 sessions</h3><div class="where">The Ritz-Carlton, Toronto</div></div>
+        </li>
+        <li>
+          <time>2010</time>
+          <div><h3>Master of Medicine</h3><div class="where">O.O. Bogomolets National Medical University, Kyiv</div></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section aria-labelledby="skills-h">
+    <div class="label">Skills</div>
+    <div>
+      <h2 id="skills-h">Tools and languages</h2>
+      <ul class="tags">
+        <li>Decontamination</li><li>Instrument inspection</li><li>Packaging</li><li>Steam sterilization</li>
+        <li>Infection prevention</li><li>Medical terminology</li><li>EMR systems</li><li>MS Office</li>
+        <li>English</li><li>Ukrainian</li><li>Russian</li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="contact-h">
+    <div class="label">Contact</div>
+    <div class="contact">
+      <h2 id="contact-h">Get in touch</h2>
+      <div class="contact-row">
+        <span class="value" id="email">panfeelova@gmail.com</span>
+        <button class="copy" id="copy-email" type="button" data-target="email">Copy email</button>
+      </div>
+      <div class="contact-row">
+        <span class="value" id="phone">(437) 601-2129</span>
+        <button class="copy" id="copy-phone" type="button" data-target="phone">Copy number</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>Daryna Panfilova · Richmond Hill, ON · References available on request</footer>
+</main>
+
+<script>
+document.querySelectorAll(".copy").forEach((btn) => {
+  const original = btn.textContent;
+  btn.addEventListener("click", () => {
+    const el = document.getElementById(btn.dataset.target);
+    const text = el.textContent.trim();
+    const done = () => { btn.textContent = "Copied"; setTimeout(() => { btn.textContent = original; }, 1600); };
+    const fallback = () => {
+      const range = document.createRange(); range.selectNodeContents(el);
+      const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      btn.textContent = "Selected, press Ctrl+C"; setTimeout(() => { btn.textContent = original; }, 2400);
+    };
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+  });
+});
+</script>
+
+</body></html>
